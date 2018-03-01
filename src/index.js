@@ -1,12 +1,11 @@
 module.exports = function solveEquation(equation) {
   equation = equation.replace(/ /g, "");
 
-  var a, b, c, D;
+  var a, b, c, D, x1, x1;
   var solutions = [];
   a = equation.match( /([-]?\d+)\*x\^2/i );
   b = equation.match( /([-]?\d+)\*x(?!\^)/i );
   c = equation.match( /[-]?\d+\*x\^2[+-]\d+\*x(?!\^)([+-]\d+)/i );
-
   D = b[1]*b[1] - 4*a[1]*c[1];
 
   if (D < 0) return "Нет корней";
